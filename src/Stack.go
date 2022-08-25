@@ -1,7 +1,6 @@
-package Stack
+package main
 
-import(
-)
+import("fmt")
 
 type Node struct{
 	Item any
@@ -30,10 +29,20 @@ func (S *Stack) Push(item any){
 	}
 	S.Count++
 }
-
 func (S *Stack) Pop() *Node{
 	tmpNode := S.StackHeader
 	S.StackHeader= tmpNode.Link
 	S.Count--
 	return tmpNode
+}
+
+func main(){
+	p:=new(Stack)
+	p.Push(12)
+	p.Push("as")
+	p.Push("qwe")
+	for p.Count!=0{
+		fmt.Println(p.Count)
+		fmt.Println(p.Pop())
+	}
 }

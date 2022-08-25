@@ -1,8 +1,6 @@
-package LinkedLists
+package main
 
-import(
-	"fmt"
-)
+import("fmt")
 
 type Node struct{
 	Item any
@@ -38,4 +36,15 @@ func (LL *LinkedList) PrintAllList(){
 		fmt.Println(tmp.Item)
 		tmp = tmp.Link
 	}
+}
+
+func main(){
+	p := new(LinkedList)
+	p.AddNode("var")
+	p.AddNode(1)
+	p.AddNode(2.5)
+	p.AddNode('A')
+	p.AddNode("p")
+	p.AddNode(-0.1)
+	p.PrintAllList()
 }
